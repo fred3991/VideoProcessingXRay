@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace VideoProcessingXRay.Commands.Base
 {
-    internal abstract class Command : ICommand
+    internal abstract class Command : ICommand 
     {
         public event EventHandler CanExecuteChanged
         {
