@@ -37,6 +37,42 @@ namespace VideoProcessingXRay.ViewModels
             set => Set(ref _titile, value);
         }
 
+        #region Task1
+
+        private int _frameRate;
+        public int FrameRate
+        {
+            get => _frameRate;
+            set => Set(ref _frameRate, value);
+        }
+
+        private int _xRes;
+        public int XRes
+        {
+            get => _xRes;
+            set => Set(ref _xRes, value);
+        }
+
+        private int _yRes;
+        public int Yres
+        {
+            get => _yRes;
+            set => Set(ref _yRes, value);
+        }
+
+
+        public ICommand TaskOneGenerateCommand { get; }
+        private void OnTaskOneGenerateCommandExecuted(object p)
+        {
+            // Здесь обработка задания 1
+        }
+        private bool CanTaskOneGenerateCommandExecute(object p) => true;
+
+
+
+
+        #endregion
+
 
         public ICommand EmptyCommand { get; }
         private void OnEmptyCommandExecuted(object p)
@@ -50,6 +86,7 @@ namespace VideoProcessingXRay.ViewModels
         {
 
             EmptyCommand = new LambdaCommand(OnEmptyCommandExecuted, CanEmptyCommandExecute);
+            TaskOneGenerateCommand = new LambdaCommand(OnTaskOneGenerateCommandExecuted, CanTaskOneGenerateCommandExecute);
 
             this.PropertyChanged += MainWindowViewModel_PropertyChanged;
         }
