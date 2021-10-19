@@ -7,9 +7,220 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Views\" />
-    <Folder Include="ImageDB\" />
+    <Compile Remove="Views\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Views\**" />
+    <Page Remove="Views\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ImageDB\1.jpg" />
+    <None Remove="ImageDB\10.jpg" />
+    <None Remove="ImageDB\11.jpg" />
+    <None Remove="ImageDB\12.jpg" />
+    <None Remove="ImageDB\13.jpg" />
+    <None Remove="ImageDB\14.jpg" />
+    <None Remove="ImageDB\15.jpg" />
+    <None Remove="ImageDB\16.jpg" />
+    <None Remove="ImageDB\17.jpg" />
+    <None Remove="ImageDB\18.jpg" />
+    <None Remove="ImageDB\19.jpg" />
+    <None Remove="ImageDB\2.jpg" />
+    <None Remove="ImageDB\20.jpg" />
+    <None Remove="ImageDB\21.jpg" />
+    <None Remove="ImageDB\22.jpg" />
+    <None Remove="ImageDB\23.jpg" />
+    <None Remove="ImageDB\24.jpg" />
+    <None Remove="ImageDB\25.jpg" />
+    <None Remove="ImageDB\26.jpg" />
+    <None Remove="ImageDB\27.jpg" />
+    <None Remove="ImageDB\28.jpg" />
+    <None Remove="ImageDB\29.jpg" />
+    <None Remove="ImageDB\3.jpg" />
+    <None Remove="ImageDB\30.jpg" />
+    <None Remove="ImageDB\31.jpg" />
+    <None Remove="ImageDB\32.jpg" />
+    <None Remove="ImageDB\33.jpg" />
+    <None Remove="ImageDB\34.jpg" />
+    <None Remove="ImageDB\35.jpg" />
+    <None Remove="ImageDB\36.jpg" />
+    <None Remove="ImageDB\37.jpg" />
+    <None Remove="ImageDB\38.jpg" />
+    <None Remove="ImageDB\39.jpg" />
+    <None Remove="ImageDB\4.jpg" />
+    <None Remove="ImageDB\40.jpg" />
+    <None Remove="ImageDB\5.jpg" />
+    <None Remove="ImageDB\6.jpg" />
+    <None Remove="ImageDB\7.jpg" />
+    <None Remove="ImageDB\8.jpg" />
+    <None Remove="ImageDB\9.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_000.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_001.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_002.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_003.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_004.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_005.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_006.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_007.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_008.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_009.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_010.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_011.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_012.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_013.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_014.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_015.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_016.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_017.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_018.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_019.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_020.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_021.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_022.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_023.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_024.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_025.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_026.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_027.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_028.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_029.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_030.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_031.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_032.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_033.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_034.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_035.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_036.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_037.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_038.jpg" />
+    <None Remove="ImageDB\Biotok XR &amp; CF Angiography_039.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ImageDB\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\11.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\12.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\13.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\14.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\15.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\16.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\17.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\18.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\19.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\20.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\21.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\22.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\23.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\24.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\25.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\26.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\27.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\28.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\29.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\30.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\31.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\32.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\33.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\34.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\35.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\36.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\37.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\38.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\39.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\40.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImageDB\9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
