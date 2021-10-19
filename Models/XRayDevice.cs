@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
+
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Threading;
+using System.Windows.Input;
+using System.Windows.Threading;
+
+using VideoProcessingXRay.Commands.Base;
+using VideoProcessingXRay.Models;
 
 namespace VideoProcessingXRay.Models
 {/// <summary>
@@ -13,7 +21,9 @@ namespace VideoProcessingXRay.Models
 /// </summary>
     public class XRayDevice
     {
-        public List<string> ImagesSet = new List<string>();
+        public List<string> ImagesString = new List<string>();
+
+        public List<Image> ImagesList = new List<Image>();
 
         public XRayDevice()
         {
@@ -22,11 +32,21 @@ namespace VideoProcessingXRay.Models
 
         public void GenerateImagesDB()
         {
-            int fileCount = Directory.GetFiles(@"C:\Users\Viva_\Source\Repos\VideoProcessingXRay\ImageDB").Length;
+
+            //string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            //int pos = path.LastIndexOf("\\"); 
+            //var result = path.Remove(pos, path.Length - pos);
+            var finalPath = @"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ImageDB\";
+
+            int fileCount = Directory.GetFiles(finalPath).Length;
             for (int i=1; i< fileCount+1; i++)
             {
-                string filePath = @"C:\Users\Viva_\Source\Repos\VideoProcessingXRay\ImageDB\"+i+".jpg";
-                ImagesSet.Add(filePath);
+                string filePath = finalPath + i + ".jpg";
+
+                ImagesString.Add(filePath);
+
+                ImagesList.Add(Image.FromFile(filePath));
+
             }       
         }
     }
