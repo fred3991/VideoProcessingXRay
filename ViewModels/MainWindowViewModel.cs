@@ -18,8 +18,11 @@ using VideoProcessingXRay.Models;
 
 namespace VideoProcessingXRay.ViewModels
 {
+    
     internal class MainWindowViewModel : ViewModel
     {
+        public static string projectPath = "C:\\Users\\Viva_\\Source\\Repos\\VideoProcessingXRay\\";
+
         public Timer XRayTimer;
 
         public Timer DateTimeTimer;
@@ -37,7 +40,7 @@ namespace VideoProcessingXRay.ViewModels
 
         public XRayDevice xrDevice;
 
-        private string _activeFrame;
+        private string _activeFrame = projectPath+"\\ImageDB\\1.jpg";
         public string ActiveFrame
         {
             get => _activeFrame;
@@ -168,7 +171,7 @@ namespace VideoProcessingXRay.ViewModels
         public MainWindowViewModel()
         {
             xrDevice = new XRayDevice();
-            FFmpegLoader.FFmpegPath = @"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ffmpeglib";
+            FFmpegLoader.FFmpegPath = projectPath+"\\ffmpeglib";
 
             StartShowFrames = new LambdaCommand(OnStartShowFramesCommandExecuted, CanStartShowFramesCommandExecute);
             StopShowFrames = new LambdaCommand(OnStopShowFramesCommandExecuted, CanStopShowFramesCommandExecute);
@@ -212,7 +215,7 @@ namespace VideoProcessingXRay.ViewModels
         {
             int x = (int)obj;
 
-            if (ActiveFrameNum < StopFrameNum)
+            if (ActiveFrameNum < StopFrameNum-1)
             {
                 ActiveFrame = ImagesStringResolution[ActiveFrameNum];
                 ActiveFrameNum++;
@@ -245,7 +248,7 @@ namespace VideoProcessingXRay.ViewModels
         /// </summary>
         public void ResizeImagesThread()
         {
-            var finalPath = @"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ImageDBResized\";
+            var finalPath = projectPath+"\\ImageDBResized\\";
             DeleteAllFilesInFolder(finalPath);
 
             int imgNum = 1;
@@ -317,8 +320,8 @@ namespace VideoProcessingXRay.ViewModels
             var settings = new VideoEncoderSettings(width: XRes, height: YRes, framerate: FramePerSecond, codec: VideoCodec.H264);
             settings.EncoderPreset = EncoderPreset.Fast;
             settings.CRF = 17;
-            var file = MediaBuilder.CreateContainer(@"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\Video\_" + XRes + "_" + YRes + "_FPS_" + FramePerSecond + "_.mp4").WithVideo(settings).Create();
-            var files = Directory.GetFiles(@"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ImageDBResized");
+            var file = MediaBuilder.CreateContainer(projectPath+"\\Video\\_" + XRes + "_" + YRes + "_FPS_" + FramePerSecond + "_.mp4").WithVideo(settings).Create();
+            var files = Directory.GetFiles(projectPath+"\\ImageDBResized");
             foreach (var inputFile in files)
             {
                 var binInputFile = File.ReadAllBytes(inputFile);

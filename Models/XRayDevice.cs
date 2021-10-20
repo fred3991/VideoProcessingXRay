@@ -25,6 +25,7 @@ namespace VideoProcessingXRay.Models
 
         public List<Image> ImagesList = new List<Image>();
 
+        public static string projectPath = "C:\\Users\\Viva_\\Source\\Repos\\VideoProcessingXRay\\";
         public XRayDevice()
         {
             GenerateImagesDB();
@@ -36,7 +37,7 @@ namespace VideoProcessingXRay.Models
             //string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
             //int pos = path.LastIndexOf("\\"); 
             //var result = path.Remove(pos, path.Length - pos);
-            var finalPath = @"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ImageDB\";
+            var finalPath = projectPath+"\\ImageDB\\";
 
             int fileCount = Directory.GetFiles(finalPath).Length;
             for (int i=1; i< fileCount+1; i++)
