@@ -105,11 +105,11 @@ namespace VideoProcessingXRay.ViewModels
 
         public ICommand StartShowFrames { get; }
         private void OnStartShowFramesCommandExecuted(object p)
-        {     
+        {
             object objxr = 0;
             object objdt = 0;
             TimerCallback xrtm = new TimerCallback(TimerClickXRay);
-            var secondPerFrame = Convert.ToInt32((1.0 / FramePerSecond)*1000);
+            var secondPerFrame = Convert.ToInt32((1.0 / FramePerSecond) * 1000);
             XRayTimer = new Timer(xrtm, objxr, 0, secondPerFrame);
 
             TimerCallback dttm = new TimerCallback(TimerClickDateTime);
@@ -123,7 +123,6 @@ namespace VideoProcessingXRay.ViewModels
         {
             XRayTimer.Change(Timeout.Infinite, Timeout.Infinite);
             DateTimeTimer.Change(Timeout.Infinite, Timeout.Infinite);
-            GC.Collect();
         }
         private bool CanStopShowFramesCommandExecute(object p) => true;
 
@@ -131,10 +130,8 @@ namespace VideoProcessingXRay.ViewModels
         public ICommand ResolutionConvert { get; }
         private void OnResolutionConvertCommandExecuted(object p)
         {
-            //Thread ResolutionConverterThread = new Thread(new ThreadStart(ResizeImagesThread));
-            //ResolutionConverterThread.Start(); // запускаем поток
-
-            ResizeImagesThread();
+            Thread ResolutionConverterThread = new Thread(new ThreadStart(ResizeImagesThread));
+            ResolutionConverterThread.Start(); // запускаем поток
         }
         private bool CanResolutionConvertCommandExecute(object p) => true;
 
@@ -146,14 +143,9 @@ namespace VideoProcessingXRay.ViewModels
         }
         private bool CanVideoConvertCommandExecute(object p) => true;
 
-        
-
-
         public ICommand StartShowResizedFrames { get; }
         private void OnStartShowResizedFramesCommandExecuted(object p)
         {
-       
-
 
             object objxr = 0;
             object objdt = 0;
@@ -184,7 +176,8 @@ namespace VideoProcessingXRay.ViewModels
         public MainWindowViewModel()
         {
             xrDevice = new XRayDevice();
-            
+            FFmpegLoader.FFmpegPath = @"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ffmpeglib";
+
             StartShowFrames = new LambdaCommand(OnStartShowFramesCommandExecuted, CanStartShowFramesCommandExecute);
             StopShowFrames = new LambdaCommand(OnStopShowFramesCommandExecuted, CanStopShowFramesCommandExecute);
 
@@ -196,6 +189,10 @@ namespace VideoProcessingXRay.ViewModels
 
         }
 
+        /// <summary>
+        /// Смена кадров исходных изображений по таймеру
+        /// </summary>
+        /// <param name="obj"></param>
         public void TimerClickXRay(object obj)
         {
             int x = (int)obj;
@@ -212,7 +209,10 @@ namespace VideoProcessingXRay.ViewModels
             }
         }
 
-
+        /// <summary>
+        /// Смена кадров измененного изображения
+        /// </summary>
+        /// <param name="obj"></param>
         public void TimerClickImagesResized(object obj)
         {
             int x = (int)obj;
@@ -234,65 +234,36 @@ namespace VideoProcessingXRay.ViewModels
         public void TimerClickDateTime(object obj)
         {
             int x = (int)obj;
-            CurrentDateTime = DateTime.Now.ToString();           
+            CurrentDateTime = DateTime.Now.ToString();
         }
 
 
 
         public void ResizeImagesThread()
         {
-           
- 
+
+
             var finalPath = @"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ImageDBResized\";
+            DirectoryInfo dirInfo = new DirectoryInfo(finalPath);
+            foreach (FileInfo file in dirInfo.GetFiles())
+            {
+                file.Delete();
+            }
+
             int imgNum = 1;
             ImagesListResolution = new List<Image>();
-            //try
-            //{                
-                foreach (Image img in xrDevice.ImagesList)
-                {
-                    Image convertedImage = ResizeImage(img, XRes, YRes);
-                    ImagesListResolution.Add(convertedImage);        
-                    Image imgCopyToSave = (Image)convertedImage.Clone();
-                    imgCopyToSave.Save(finalPath + "convertedImage_"+XRes+"_"+YRes+"_"+ + imgNum + ".jpg");
-
-                    imgNum++;
-                    ImagesStringResolution.Add(finalPath + "convertedImage_" + XRes + "_" + YRes + "_" + +imgNum + ".jpg");
-
-                }
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            GC.Collect();
-
-        }
-
-        public static void SaveStreamAsFile(string filePath, Stream inputStream, string fileName)
-        {
-            DirectoryInfo info = new DirectoryInfo(filePath);
-            if (!info.Exists)
+            foreach (Image img in xrDevice.ImagesList)
             {
-                info.Create();
-            }
+                Image convertedImage = ResizeImage(img, XRes, YRes);
+                ImagesListResolution.Add(convertedImage);
+                Image imgCopyToSave = (Image)convertedImage.Clone();
+                imgCopyToSave.Save(finalPath + "convertedImage_" + XRes + "_" + YRes + "_" + +imgNum + ".jpg");
 
-            string path = Path.Combine(filePath, fileName);
-            using (FileStream outputFileStream = new FileStream(path, FileMode.Create))
-            {
-                inputStream.CopyTo(outputFileStream);
+                imgNum++;
+                ImagesStringResolution.Add(finalPath + "convertedImage_" + XRes + "_" + YRes + "_" + +imgNum + ".jpg");
+
             }
         }
-
-        public static Stream ToStream(Image image)
-        {
-            var stream = new MemoryStream();
-
-            image.Save(stream, image.RawFormat);
-            stream.Position = 0;
-
-            return stream;
-        }
-
 
 
 
@@ -324,19 +295,16 @@ namespace VideoProcessingXRay.ViewModels
                     graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
                 }
             }
-
             return destImage;
         }
 
 
         public void SaveVideo()
         {
-            FFmpegLoader.FFmpegPath = @"C:\Users\FedorovEA\Downloads\ffmpeg-n4.4-178-g4b583e5425-win64-gpl-shared-4.4\bin";
-
             var settings = new VideoEncoderSettings(width: XRes, height: YRes, framerate: FramePerSecond, codec: VideoCodec.H264);
             settings.EncoderPreset = EncoderPreset.Fast;
             settings.CRF = 17;
-            var file = MediaBuilder.CreateContainer(@"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\Video\out.mp4").WithVideo(settings).Create();
+            var file = MediaBuilder.CreateContainer(@"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\Video\_" + XRes + "_" + YRes + "_FPS_" + FramePerSecond + "_.mp4").WithVideo(settings).Create();
             var files = Directory.GetFiles(@"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ImageDBResized");
             foreach (var inputFile in files)
             {
@@ -348,9 +316,7 @@ namespace VideoProcessingXRay.ViewModels
                 var bitmapData = ImageData.FromPointer(bitLock.Scan0, ImagePixelFormat.Bgr24, bitmap.Size);
                 file.Video.AddFrame(bitmapData); // Encode the frame
                 bitmap.UnlockBits(bitLock);
-
             }
-
             file.Dispose();
         }
 
