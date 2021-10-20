@@ -331,7 +331,7 @@ namespace VideoProcessingXRay.ViewModels
 
         public void SaveVideo()
         {
-            FFmpegLoader.FFmpegPath = @"C:\FFmpeg\ffmpeg";
+            FFmpegLoader.FFmpegPath = @"C:\Users\FedorovEA\Downloads\ffmpeg-n4.4-178-g4b583e5425-win64-gpl-shared-4.4\bin";
 
             var settings = new VideoEncoderSettings(width: XRes, height: YRes, framerate: FramePerSecond, codec: VideoCodec.H264);
             settings.EncoderPreset = EncoderPreset.Fast;
