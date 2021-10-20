@@ -35,7 +35,6 @@ namespace VideoProcessingXRay.ViewModels
         public List<string> ImagesStringResolution = new List<string>();
 
 
-
         public XRayDevice xrDevice;
 
         private string _activeFrame;
@@ -59,7 +58,7 @@ namespace VideoProcessingXRay.ViewModels
             set => Set(ref _startFrameNum, value);
         }
 
-        private int _stopFrameNum = 40;
+        private int _stopFrameNum = 40; // Максимум кадров 40, меньше можно, больше нельзя
         public int StopFrameNum
         {
             get => _stopFrameNum;
@@ -114,7 +113,6 @@ namespace VideoProcessingXRay.ViewModels
 
             TimerCallback dttm = new TimerCallback(TimerClickDateTime);
             DateTimeTimer = new Timer(dttm, objdt, 0, 1000);
-
         }
 
         private bool CanStartShowFramesCommandExecute(object p) => true;
@@ -146,17 +144,13 @@ namespace VideoProcessingXRay.ViewModels
         public ICommand StartShowResizedFrames { get; }
         private void OnStartShowResizedFramesCommandExecuted(object p)
         {
-
             object objxr = 0;
             object objdt = 0;
             TimerCallback xrtm = new TimerCallback(TimerClickImagesResized);
             var secondPerFrame = Convert.ToInt32((1.0 / FramePerSecond) * 1000);
             XRayTimer = new Timer(xrtm, objxr, 0, secondPerFrame);
-
             TimerCallback dttm = new TimerCallback(TimerClickDateTime);
             DateTimeTimer = new Timer(dttm, objdt, 0, 1000);
-
-
         }
         private bool CanStartShowResizedFramesCommandExecute(object p) => true;
 
@@ -165,10 +159,8 @@ namespace VideoProcessingXRay.ViewModels
         public ICommand StopShowResizedFrames { get; }
         private void OnStopShowResizedFramesCommandExecuted(object p)
         {
-            // Выключаем предыдущий
             XRayTimer.Change(Timeout.Infinite, Timeout.Infinite);
             DateTimeTimer.Change(Timeout.Infinite, Timeout.Infinite);
-            GC.Collect();
         }
         private bool CanStopShowResizedFramesCommandExecute(object p) => true;
 
@@ -206,6 +198,9 @@ namespace VideoProcessingXRay.ViewModels
             else
             {
                 ActiveFrameNum = 1;
+                FrameNum = ActiveFrameNum;
+                ActiveFrame = xrDevice.ImagesString[ActiveFrameNum];
+                ActiveFrameNum++;
             }
         }
 
@@ -226,11 +221,17 @@ namespace VideoProcessingXRay.ViewModels
             else
             {
                 ActiveFrameNum = 1;
+                FrameNum = ActiveFrameNum;
+                ActiveFrame = ImagesStringResolution[ActiveFrameNum];
+                ActiveFrameNum++;
             }
         }
 
 
-
+        /// <summary>
+        /// Таймер времени на форме
+        /// </summary>
+        /// <param name="obj"></param>
         public void TimerClickDateTime(object obj)
         {
             int x = (int)obj;
@@ -239,16 +240,13 @@ namespace VideoProcessingXRay.ViewModels
 
 
 
+        /// <summary>
+        /// Изменяем исходные изображения для новых xRes yRes
+        /// </summary>
         public void ResizeImagesThread()
         {
-
-
             var finalPath = @"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\ImageDBResized\";
-            DirectoryInfo dirInfo = new DirectoryInfo(finalPath);
-            foreach (FileInfo file in dirInfo.GetFiles())
-            {
-                file.Delete();
-            }
+            DeleteAllFilesInFolder(finalPath);
 
             int imgNum = 1;
             ImagesListResolution = new List<Image>();
@@ -265,15 +263,28 @@ namespace VideoProcessingXRay.ViewModels
             }
         }
 
+        /// <summary>
+        /// чтоб не ловить ошибку GDI+
+        /// </summary>
+        /// <param name="finalPath"></param>
+        public void DeleteAllFilesInFolder(string finalPath)
+        {          
+            DirectoryInfo dirInfo = new DirectoryInfo(finalPath);
+            foreach (FileInfo file in dirInfo.GetFiles())
+            {
+                file.Delete();
+            }
+        }
+
 
 
         /// <summary>
-        /// Resize the image to the specified width and height.
+        /// Берем одно изображение и изменяем ширину/высоту
         /// </summary>
-        /// <param name="image">The image to resize.</param>
-        /// <param name="width">The width to resize to.</param>
-        /// <param name="height">The height to resize to.</param>
-        /// <returns>The resized image.</returns>
+        /// <param name="image"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public static Bitmap ResizeImage(Image image, int width, int height)
         {
             var destRect = new Rectangle(0, 0, width, height);
@@ -288,7 +299,6 @@ namespace VideoProcessingXRay.ViewModels
                 graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 graphics.SmoothingMode = SmoothingMode.HighQuality;
                 graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
                 using (var wrapMode = new ImageAttributes())
                 {
                     wrapMode.SetWrapMode(WrapMode.TileFlipXY);
@@ -299,6 +309,9 @@ namespace VideoProcessingXRay.ViewModels
         }
 
 
+        /// <summary>
+        /// Берем папку ImageDBResized и делаем видео с заданным ФПС и шириной/высотой;
+        /// </summary>
         public void SaveVideo()
         {
             var settings = new VideoEncoderSettings(width: XRes, height: YRes, framerate: FramePerSecond, codec: VideoCodec.H264);
@@ -319,6 +332,5 @@ namespace VideoProcessingXRay.ViewModels
             }
             file.Dispose();
         }
-
     }
 }
