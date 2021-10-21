@@ -21,7 +21,10 @@ namespace VideoProcessingXRay.ViewModels
     
     internal class MainWindowViewModel : ViewModel
     {
-        public static string projectPath = "C:\\Users\\Viva_\\Source\\Repos\\VideoProcessingXRay\\";
+        //public static string projectPath = "C:\\Users\\FedorovEA\\source\\repos\\VideoProcessingXRay\\";
+        //public static string projectPath = System.IO.Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).FullName;
+        public static string projectPath = Path.Combine(Environment.CurrentDirectory);
+
 
         public Timer XRayTimer;
 
@@ -131,8 +134,17 @@ namespace VideoProcessingXRay.ViewModels
         public ICommand ResolutionConvert { get; }
         private void OnResolutionConvertCommandExecuted(object p)
         {
-            Thread ResolutionConverterThread = new Thread(new ThreadStart(ResizeImagesThread));
-            ResolutionConverterThread.Start(); // запускаем поток
+            try
+            {
+                ResizeImagesThread();
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            
         }
         private bool CanResolutionConvertCommandExecute(object p) => true;
 
@@ -140,7 +152,16 @@ namespace VideoProcessingXRay.ViewModels
         public ICommand VideoConvert { get; }
         private void OnVideoConvertCommandExecuted(object p)
         {
-            SaveVideo();
+            try
+            {
+                SaveVideo();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+           
         }
         private bool CanVideoConvertCommandExecute(object p) => true;
 
@@ -171,7 +192,13 @@ namespace VideoProcessingXRay.ViewModels
         public MainWindowViewModel()
         {
             xrDevice = new XRayDevice();
-            FFmpegLoader.FFmpegPath = projectPath+"\\ffmpeglib";
+            //FFmpegLoader.FFmpegPath = projectPath+"\\ffmpeglib";
+            FFmpegLoader.FFmpegPath = Path.Combine(Environment.CurrentDirectory, @"ffmpeglib\");
+
+            //string ppp = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            //var p = System.IO.Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).FullName;
+
+            string pathsda = Path.Combine(Environment.CurrentDirectory);
 
             StartShowFrames = new LambdaCommand(OnStartShowFramesCommandExecuted, CanStartShowFramesCommandExecute);
             StopShowFrames = new LambdaCommand(OnStopShowFramesCommandExecuted, CanStopShowFramesCommandExecute);
@@ -317,23 +344,29 @@ namespace VideoProcessingXRay.ViewModels
         /// </summary>
         public void SaveVideo()
         {
-            var settings = new VideoEncoderSettings(width: XRes, height: YRes, framerate: FramePerSecond, codec: VideoCodec.H264);
-            settings.EncoderPreset = EncoderPreset.Fast;
-            settings.CRF = 17;
-            var file = MediaBuilder.CreateContainer(projectPath+"\\Video\\_" + XRes + "_" + YRes + "_FPS_" + FramePerSecond + "_.mp4").WithVideo(settings).Create();
-            var files = Directory.GetFiles(projectPath+"\\ImageDBResized");
-            foreach (var inputFile in files)
-            {
-                var binInputFile = File.ReadAllBytes(inputFile);
-                var memInput = new MemoryStream(binInputFile);
-                var bitmap = Bitmap.FromStream(memInput) as Bitmap;
-                var rect = new System.Drawing.Rectangle(System.Drawing.Point.Empty, bitmap.Size);
-                var bitLock = bitmap.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
-                var bitmapData = ImageData.FromPointer(bitLock.Scan0, ImagePixelFormat.Bgr24, bitmap.Size);
-                file.Video.AddFrame(bitmapData); // Encode the frame
-                bitmap.UnlockBits(bitLock);
-            }
-            file.Dispose();
+           
+                var settings = new VideoEncoderSettings(width: XRes, height: YRes, framerate: FramePerSecond, codec: VideoCodec.H264);
+                settings.EncoderPreset = EncoderPreset.Fast;
+                settings.CRF = 17;
+                var file = MediaBuilder.CreateContainer(projectPath + "\\Video\\_" + XRes + "_" + YRes + "_FPS_" + FramePerSecond + "_.mp4").WithVideo(settings).Create();
+                var files = Directory.GetFiles(projectPath + "\\ImageDBResized");
+                foreach (var inputFile in files)
+                {
+                    var binInputFile = File.ReadAllBytes(inputFile);
+                    var memInput = new MemoryStream(binInputFile);
+                    var bitmap = Bitmap.FromStream(memInput) as Bitmap;
+                    var rect = new System.Drawing.Rectangle(System.Drawing.Point.Empty, bitmap.Size);
+                    var bitLock = bitmap.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+                    var bitmapData = ImageData.FromPointer(bitLock.Scan0, ImagePixelFormat.Bgr24, bitmap.Size);
+                    file.Video.AddFrame(bitmapData); // Encode the frame
+                    bitmap.UnlockBits(bitLock);
+                }
+                file.Dispose();
+
+           
+         
+
+           
         }
     }
 }

@@ -25,7 +25,10 @@ namespace VideoProcessingXRay.Models
 
         public List<Image> ImagesList = new List<Image>();
 
-        public static string projectPath = "C:\\Users\\Viva_\\Source\\Repos\\VideoProcessingXRay\\";
+        //public static string projectPath = "C:\\Users\\FedorovEA\\source\\repos\\VideoProcessingXRay\\";
+        //public static string projectPath = System.IO.Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).FullName;
+        public static string projectPath = Path.Combine(Environment.CurrentDirectory);
+
         public XRayDevice()
         {
             GenerateImagesDB();

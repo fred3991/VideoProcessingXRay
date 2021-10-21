@@ -22,7 +22,15 @@ namespace VideoProcessingXRay
     {
         public MainWindow()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.InnerException.ToString());
+            }
+         
         }
     }
 }

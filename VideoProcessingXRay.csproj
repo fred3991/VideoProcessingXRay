@@ -26,6 +26,46 @@
     <None Remove="ffmpeglib\postproc-55.dll" />
     <None Remove="ffmpeglib\swresample-3.dll" />
     <None Remove="ffmpeglib\swscale-5.dll" />
+    <None Remove="ImageDBResized\convertedImage_256_256_1.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_10.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_11.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_12.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_13.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_14.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_15.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_16.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_17.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_18.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_19.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_2.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_20.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_21.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_22.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_23.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_24.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_25.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_26.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_27.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_28.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_29.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_3.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_30.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_31.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_32.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_33.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_34.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_35.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_36.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_37.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_38.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_39.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_4.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_40.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_5.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_6.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_7.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_8.jpg" />
+    <None Remove="ImageDBResized\convertedImage_256_256_9.jpg" />
     <None Remove="ImageDB\1.jpg" />
     <None Remove="ImageDB\10.jpg" />
     <None Remove="ImageDB\11.jpg" />
@@ -66,6 +106,8 @@
     <None Remove="ImageDB\7.jpg" />
     <None Remove="ImageDB\8.jpg" />
     <None Remove="ImageDB\9.jpg" />
+    <None Remove="Video\_128_133_FPS_3_.mp4" />
+    <None Remove="Video\_256_256_FPS_24_.mp4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,159 +116,282 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="ffmpeglib\avcodec-58.dll">
+    <Content Include="ffmpeglib\avcodec-58.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\avdevice-58.dll">
+    </Content>
+    <Content Include="ffmpeglib\avdevice-58.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\avfilter-7.dll">
+    </Content>
+    <Content Include="ffmpeglib\avfilter-7.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\avformat-58.dll">
+    </Content>
+    <Content Include="ffmpeglib\avformat-58.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\avutil-56.dll">
+    </Content>
+    <Content Include="ffmpeglib\avutil-56.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\ffmpeg.exe">
+    </Content>
+    <Content Include="ffmpeglib\ffmpeg.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\ffplay.exe">
+    </Content>
+    <Content Include="ffmpeglib\ffplay.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\ffprobe.exe">
+    </Content>
+    <Content Include="ffmpeglib\ffprobe.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\postproc-55.dll">
+    </Content>
+    <Content Include="ffmpeglib\postproc-55.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\swresample-3.dll">
+    </Content>
+    <Content Include="ffmpeglib\swresample-3.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ffmpeglib\swscale-5.dll">
+    </Content>
+    <Content Include="ffmpeglib\swscale-5.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\1.jpg">
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_10.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_11.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_12.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_13.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_14.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_15.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_16.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_17.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_18.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_19.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_20.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_21.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_22.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_23.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_24.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_25.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_26.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_27.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_28.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_30.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_31.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_32.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_33.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_34.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_35.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_36.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_37.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_38.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_39.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_40.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDBResized\convertedImage_256_256_9.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\10.jpg">
+    </Content>
+    <Content Include="ImageDB\10.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\11.jpg">
+    </Content>
+    <Content Include="ImageDB\11.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\12.jpg">
+    </Content>
+    <Content Include="ImageDB\12.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\13.jpg">
+    </Content>
+    <Content Include="ImageDB\13.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\14.jpg">
+    </Content>
+    <Content Include="ImageDB\14.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\15.jpg">
+    </Content>
+    <Content Include="ImageDB\15.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\16.jpg">
+    </Content>
+    <Content Include="ImageDB\16.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\17.jpg">
+    </Content>
+    <Content Include="ImageDB\17.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\18.jpg">
+    </Content>
+    <Content Include="ImageDB\18.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\19.jpg">
+    </Content>
+    <Content Include="ImageDB\19.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\2.jpg">
+    </Content>
+    <Content Include="ImageDB\2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\20.jpg">
+    </Content>
+    <Content Include="ImageDB\20.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\21.jpg">
+    </Content>
+    <Content Include="ImageDB\21.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\22.jpg">
+    </Content>
+    <Content Include="ImageDB\22.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\23.jpg">
+    </Content>
+    <Content Include="ImageDB\23.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\24.jpg">
+    </Content>
+    <Content Include="ImageDB\24.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\25.jpg">
+    </Content>
+    <Content Include="ImageDB\25.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\26.jpg">
+    </Content>
+    <Content Include="ImageDB\26.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\27.jpg">
+    </Content>
+    <Content Include="ImageDB\27.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\28.jpg">
+    </Content>
+    <Content Include="ImageDB\28.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\29.jpg">
+    </Content>
+    <Content Include="ImageDB\29.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\3.jpg">
+    </Content>
+    <Content Include="ImageDB\3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\30.jpg">
+    </Content>
+    <Content Include="ImageDB\30.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\31.jpg">
+    </Content>
+    <Content Include="ImageDB\31.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\32.jpg">
+    </Content>
+    <Content Include="ImageDB\32.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\33.jpg">
+    </Content>
+    <Content Include="ImageDB\33.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\34.jpg">
+    </Content>
+    <Content Include="ImageDB\34.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\35.jpg">
+    </Content>
+    <Content Include="ImageDB\35.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\36.jpg">
+    </Content>
+    <Content Include="ImageDB\36.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\37.jpg">
+    </Content>
+    <Content Include="ImageDB\37.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\38.jpg">
+    </Content>
+    <Content Include="ImageDB\38.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\39.jpg">
+    </Content>
+    <Content Include="ImageDB\39.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\4.jpg">
+    </Content>
+    <Content Include="ImageDB\4.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\40.jpg">
+    </Content>
+    <Content Include="ImageDB\40.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\5.jpg">
+    </Content>
+    <Content Include="ImageDB\5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\6.jpg">
+    </Content>
+    <Content Include="ImageDB\6.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\7.jpg">
+    </Content>
+    <Content Include="ImageDB\7.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\8.jpg">
+    </Content>
+    <Content Include="ImageDB\8.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ImageDB\9.jpg">
+    </Content>
+    <Content Include="ImageDB\9.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
+    <Content Include="Video\_128_133_FPS_3_.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
