@@ -43,7 +43,7 @@ namespace VideoProcessingXRay.ViewModels
 
         public XRayDevice xrDevice;
 
-        private string _activeFrame = projectPath+"\\ImageDB\\1.jpg";
+        private string _activeFrame = projectPath+"\\ImageDB\\1.tif";
         public string ActiveFrame
         {
             get => _activeFrame;
@@ -285,10 +285,10 @@ namespace VideoProcessingXRay.ViewModels
                 Image convertedImage = ResizeImage(img, XRes, YRes);
                 ImagesListResolution.Add(convertedImage);
                 Image imgCopyToSave = (Image)convertedImage.Clone();
-                imgCopyToSave.Save(finalPath + "convertedImage_" + XRes + "_" + YRes + "_" + +imgNum + ".jpg");
+                imgCopyToSave.Save(finalPath + "convertedImage_" + XRes + "_" + YRes + "_" + +imgNum + ".tif");
 
                 imgNum++;
-                ImagesStringResolution.Add(finalPath + "convertedImage_" + XRes + "_" + YRes + "_" + +imgNum + ".jpg");
+                ImagesStringResolution.Add(finalPath + "convertedImage_" + XRes + "_" + YRes + "_" + +imgNum + ".tif");
 
             }
         }

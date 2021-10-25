@@ -67,45 +67,145 @@
     <None Remove="ImageDBResized\convertedImage_256_256_8.jpg" />
     <None Remove="ImageDBResized\convertedImage_256_256_9.jpg" />
     <None Remove="ImageDB\1.jpg" />
+    <None Remove="ImageDB\1.tif" />
     <None Remove="ImageDB\10.jpg" />
+    <None Remove="ImageDB\10.tif" />
+    <None Remove="ImageDB\100.tif" />
     <None Remove="ImageDB\11.jpg" />
+    <None Remove="ImageDB\11.tif" />
     <None Remove="ImageDB\12.jpg" />
+    <None Remove="ImageDB\12.tif" />
     <None Remove="ImageDB\13.jpg" />
+    <None Remove="ImageDB\13.tif" />
     <None Remove="ImageDB\14.jpg" />
+    <None Remove="ImageDB\14.tif" />
     <None Remove="ImageDB\15.jpg" />
+    <None Remove="ImageDB\15.tif" />
     <None Remove="ImageDB\16.jpg" />
+    <None Remove="ImageDB\16.tif" />
     <None Remove="ImageDB\17.jpg" />
+    <None Remove="ImageDB\17.tif" />
     <None Remove="ImageDB\18.jpg" />
+    <None Remove="ImageDB\18.tif" />
     <None Remove="ImageDB\19.jpg" />
+    <None Remove="ImageDB\19.tif" />
     <None Remove="ImageDB\2.jpg" />
+    <None Remove="ImageDB\2.tif" />
     <None Remove="ImageDB\20.jpg" />
+    <None Remove="ImageDB\20.tif" />
     <None Remove="ImageDB\21.jpg" />
+    <None Remove="ImageDB\21.tif" />
     <None Remove="ImageDB\22.jpg" />
+    <None Remove="ImageDB\22.tif" />
     <None Remove="ImageDB\23.jpg" />
+    <None Remove="ImageDB\23.tif" />
     <None Remove="ImageDB\24.jpg" />
+    <None Remove="ImageDB\24.tif" />
     <None Remove="ImageDB\25.jpg" />
+    <None Remove="ImageDB\25.tif" />
     <None Remove="ImageDB\26.jpg" />
+    <None Remove="ImageDB\26.tif" />
     <None Remove="ImageDB\27.jpg" />
+    <None Remove="ImageDB\27.tif" />
     <None Remove="ImageDB\28.jpg" />
+    <None Remove="ImageDB\28.tif" />
     <None Remove="ImageDB\29.jpg" />
+    <None Remove="ImageDB\29.tif" />
     <None Remove="ImageDB\3.jpg" />
+    <None Remove="ImageDB\3.tif" />
     <None Remove="ImageDB\30.jpg" />
+    <None Remove="ImageDB\30.tif" />
     <None Remove="ImageDB\31.jpg" />
+    <None Remove="ImageDB\31.tif" />
     <None Remove="ImageDB\32.jpg" />
+    <None Remove="ImageDB\32.tif" />
     <None Remove="ImageDB\33.jpg" />
+    <None Remove="ImageDB\33.tif" />
     <None Remove="ImageDB\34.jpg" />
+    <None Remove="ImageDB\34.tif" />
     <None Remove="ImageDB\35.jpg" />
+    <None Remove="ImageDB\35.tif" />
     <None Remove="ImageDB\36.jpg" />
+    <None Remove="ImageDB\36.tif" />
     <None Remove="ImageDB\37.jpg" />
+    <None Remove="ImageDB\37.tif" />
     <None Remove="ImageDB\38.jpg" />
+    <None Remove="ImageDB\38.tif" />
     <None Remove="ImageDB\39.jpg" />
+    <None Remove="ImageDB\39.tif" />
     <None Remove="ImageDB\4.jpg" />
+    <None Remove="ImageDB\4.tif" />
     <None Remove="ImageDB\40.jpg" />
+    <None Remove="ImageDB\40.tif" />
+    <None Remove="ImageDB\41.tif" />
+    <None Remove="ImageDB\42.tif" />
+    <None Remove="ImageDB\43.tif" />
+    <None Remove="ImageDB\44.tif" />
+    <None Remove="ImageDB\45.tif" />
+    <None Remove="ImageDB\46.tif" />
+    <None Remove="ImageDB\47.tif" />
+    <None Remove="ImageDB\48.tif" />
+    <None Remove="ImageDB\49.tif" />
     <None Remove="ImageDB\5.jpg" />
+    <None Remove="ImageDB\5.tif" />
+    <None Remove="ImageDB\50.tif" />
+    <None Remove="ImageDB\51.tif" />
+    <None Remove="ImageDB\52.tif" />
+    <None Remove="ImageDB\53.tif" />
+    <None Remove="ImageDB\54.tif" />
+    <None Remove="ImageDB\55.tif" />
+    <None Remove="ImageDB\56.tif" />
+    <None Remove="ImageDB\57.tif" />
+    <None Remove="ImageDB\58.tif" />
+    <None Remove="ImageDB\59.tif" />
     <None Remove="ImageDB\6.jpg" />
+    <None Remove="ImageDB\6.tif" />
+    <None Remove="ImageDB\60.tif" />
+    <None Remove="ImageDB\61.tif" />
+    <None Remove="ImageDB\62.tif" />
+    <None Remove="ImageDB\63.tif" />
+    <None Remove="ImageDB\64.tif" />
+    <None Remove="ImageDB\65.tif" />
+    <None Remove="ImageDB\66.tif" />
+    <None Remove="ImageDB\67.tif" />
+    <None Remove="ImageDB\68.tif" />
+    <None Remove="ImageDB\69.tif" />
     <None Remove="ImageDB\7.jpg" />
+    <None Remove="ImageDB\7.tif" />
+    <None Remove="ImageDB\70.tif" />
+    <None Remove="ImageDB\71.tif" />
+    <None Remove="ImageDB\72.tif" />
+    <None Remove="ImageDB\73.tif" />
+    <None Remove="ImageDB\74.tif" />
+    <None Remove="ImageDB\75.tif" />
+    <None Remove="ImageDB\76.tif" />
+    <None Remove="ImageDB\77.tif" />
+    <None Remove="ImageDB\78.tif" />
+    <None Remove="ImageDB\79.tif" />
     <None Remove="ImageDB\8.jpg" />
+    <None Remove="ImageDB\8.tif" />
+    <None Remove="ImageDB\80.tif" />
+    <None Remove="ImageDB\81.tif" />
+    <None Remove="ImageDB\82.tif" />
+    <None Remove="ImageDB\83.tif" />
+    <None Remove="ImageDB\84.tif" />
+    <None Remove="ImageDB\85.tif" />
+    <None Remove="ImageDB\86.tif" />
+    <None Remove="ImageDB\87.tif" />
+    <None Remove="ImageDB\88.tif" />
+    <None Remove="ImageDB\89.tif" />
     <None Remove="ImageDB\9.jpg" />
+    <None Remove="ImageDB\9.tif" />
+    <None Remove="ImageDB\90.tif" />
+    <None Remove="ImageDB\91.tif" />
+    <None Remove="ImageDB\92.tif" />
+    <None Remove="ImageDB\93.tif" />
+    <None Remove="ImageDB\94.tif" />
+    <None Remove="ImageDB\95.tif" />
+    <None Remove="ImageDB\96.tif" />
+    <None Remove="ImageDB\97.tif" />
+    <None Remove="ImageDB\98.tif" />
+    <None Remove="ImageDB\99.tif" />
     <None Remove="Video\_128_133_FPS_3_.mp4" />
     <None Remove="Video\_256_256_FPS_24_.mp4" />
   </ItemGroup>
@@ -269,124 +369,304 @@
     <Content Include="ImageDBResized\convertedImage_256_256_9.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\1.jpg">
+    <Content Include="ImageDB\1.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\10.jpg">
+    <Content Include="ImageDB\10.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\11.jpg">
+    <Content Include="ImageDB\100.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\12.jpg">
+    <Content Include="ImageDB\11.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\13.jpg">
+    <Content Include="ImageDB\12.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\14.jpg">
+    <Content Include="ImageDB\13.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\15.jpg">
+    <Content Include="ImageDB\14.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\16.jpg">
+    <Content Include="ImageDB\15.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\17.jpg">
+    <Content Include="ImageDB\16.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\18.jpg">
+    <Content Include="ImageDB\17.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\19.jpg">
+    <Content Include="ImageDB\18.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\2.jpg">
+    <Content Include="ImageDB\19.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\20.jpg">
+    <Content Include="ImageDB\2.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\21.jpg">
+    <Content Include="ImageDB\20.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\22.jpg">
+    <Content Include="ImageDB\21.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\23.jpg">
+    <Content Include="ImageDB\22.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\24.jpg">
+    <Content Include="ImageDB\23.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\25.jpg">
+    <Content Include="ImageDB\24.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\26.jpg">
+    <Content Include="ImageDB\25.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\27.jpg">
+    <Content Include="ImageDB\26.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\28.jpg">
+    <Content Include="ImageDB\27.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\29.jpg">
+    <Content Include="ImageDB\28.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\3.jpg">
+    <Content Include="ImageDB\29.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\30.jpg">
+    <Content Include="ImageDB\3.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\31.jpg">
+    <Content Include="ImageDB\30.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\32.jpg">
+    <Content Include="ImageDB\31.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\33.jpg">
+    <Content Include="ImageDB\32.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\34.jpg">
+    <Content Include="ImageDB\33.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\35.jpg">
+    <Content Include="ImageDB\34.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\36.jpg">
+    <Content Include="ImageDB\35.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\37.jpg">
+    <Content Include="ImageDB\36.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\38.jpg">
+    <Content Include="ImageDB\37.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\39.jpg">
+    <Content Include="ImageDB\38.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\4.jpg">
+    <Content Include="ImageDB\39.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\40.jpg">
+    <Content Include="ImageDB\4.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\5.jpg">
+    <Content Include="ImageDB\40.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\6.jpg">
+    <Content Include="ImageDB\41.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\7.jpg">
+    <Content Include="ImageDB\42.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\8.jpg">
+    <Content Include="ImageDB\43.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ImageDB\9.jpg">
+    <Content Include="ImageDB\44.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\45.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\46.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\47.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\48.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\49.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\5.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\50.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\51.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\52.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\53.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\54.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\55.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\56.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\57.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\58.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\59.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\6.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\60.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\61.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\62.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\63.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\64.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\65.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\66.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\67.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\68.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\69.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\7.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\70.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\71.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\72.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\73.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\74.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\75.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\76.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\77.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\78.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\79.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\8.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\80.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\81.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\82.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\83.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\84.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\85.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\86.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\87.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\88.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\89.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\9.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\90.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\91.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\92.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\93.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\94.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\95.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\96.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\97.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\98.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageDB\99.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Video\_128_133_FPS_3_.mp4">

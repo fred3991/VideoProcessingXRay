@@ -45,7 +45,7 @@ namespace VideoProcessingXRay.Models
             int fileCount = Directory.GetFiles(finalPath).Length;
             for (int i=1; i< fileCount+1; i++)
             {
-                string filePath = finalPath + i + ".jpg";
+                string filePath = finalPath + i + ".tif";
 
                 ImagesString.Add(filePath);
 
