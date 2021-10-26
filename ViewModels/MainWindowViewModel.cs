@@ -3,7 +3,6 @@ using FFMediaToolkit.Encoding;
 using FFMediaToolkit.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
@@ -15,6 +14,9 @@ using System.Windows.Threading;
 
 using VideoProcessingXRay.Commands.Base;
 using VideoProcessingXRay.Models;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Drawing;
 
 namespace VideoProcessingXRay.ViewModels
 {
@@ -111,6 +113,68 @@ namespace VideoProcessingXRay.ViewModels
         public ICommand StartShowFrames { get; }
         private void OnStartShowFramesCommandExecuted(object p)
         {
+
+            BitmapImage myBitmapImage = new BitmapImage();
+          
+            myBitmapImage.BeginInit();
+            myBitmapImage.UriSource = new Uri(@"C:\Users\Viva_\Source\Repos\VideoProcessingXRay\tstImageDB\Gray16PNG.PNG");
+            myBitmapImage.EndInit();
+
+            var pF = myBitmapImage.Format;
+
+
+
+            FormatConvertedBitmap newFormatedBitmapSource = new FormatConvertedBitmap();
+            newFormatedBitmapSource.BeginInit();
+
+            newFormatedBitmapSource.Source = myBitmapImage;
+
+
+            newFormatedBitmapSource.DestinationFormat =  System.Windows.Media.PixelFormats.Gray16;
+
+     
+
+            newFormatedBitmapSource.EndInit();
+
+        
+
+            FileStream stream = new FileStream(@"C:\Users\Viva_\Source\Repos\VideoProcessingXRay\tstImageDB\Gray16PNG.PNG", FileMode.Create, FileAccess.ReadWrite);
+
+            //TiffBitmapEncoder encoder = new TiffBitmapEncoder();
+            //encoder.Compression = TiffCompressOption.Zip;
+            //encoder.Frames.Add(BitmapFrame.Create(newFormatedBitmapSource));
+            //encoder.Save(stream);
+
+
+            PngBitmapEncoder encoder = new PngBitmapEncoder();              
+            encoder.Interlace = PngInterlaceOption.On;
+            encoder.Frames.Add(BitmapFrame.Create(newFormatedBitmapSource));
+            encoder.Save(stream);
+
+
+
+
+            //var imgH = img.PixelHeight;
+            //var imgW = img.PixelWidth;
+
+            //var pxlF = img.Format;
+
+            //BitmapImage newBmp = img.Clone();
+
+            //Graphics gr = Graphics.FromImage(newBmp);
+
+
+
+            //imgH = clone.Height;
+            //imgW = clone.Width;
+
+            //pxlF = clone.PixelFormat;
+
+            //clone.Save(@"C:\Users\Viva_\Source\Repos\VideoProcessingXRay\tstImageDB\1.tif", ImageFormat.Tiff);
+
+
+
+
             object objxr = 0;
             object objdt = 0;
             TimerCallback xrtm = new TimerCallback(TimerClickXRay);
@@ -356,7 +420,7 @@ namespace VideoProcessingXRay.ViewModels
                     var memInput = new MemoryStream(binInputFile);
                     var bitmap = Bitmap.FromStream(memInput) as Bitmap;
                     var rect = new System.Drawing.Rectangle(System.Drawing.Point.Empty, bitmap.Size);
-                    var bitLock = bitmap.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+                    var bitLock = bitmap.LockBits(rect, ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                     var bitmapData = ImageData.FromPointer(bitLock.Scan0, ImagePixelFormat.Bgr24, bitmap.Size);
                     file.Video.AddFrame(bitmapData); // Encode the frame
                     bitmap.UnlockBits(bitLock);
@@ -368,5 +432,10 @@ namespace VideoProcessingXRay.ViewModels
 
            
         }
+
+
+
+
+
     }
 }

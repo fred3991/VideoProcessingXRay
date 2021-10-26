@@ -49,7 +49,7 @@ namespace VideoProcessingXRay.Models
 
                 ImagesString.Add(filePath);
 
-                ImagesList.Add(Image.FromFile(filePath));
+              //ImagesList.Add(Image.FromFile(filePath));
 
             }       
         }
