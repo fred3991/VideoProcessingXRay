@@ -114,42 +114,69 @@ namespace VideoProcessingXRay.ViewModels
         private void OnStartShowFramesCommandExecuted(object p)
         {
 
+            // директория проекта
+            string projectPath = System.IO.Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).FullName;
+            //Исполняемая директория
+            //string projectPath = Path.Combine(Environment.CurrentDirectory);
+
+
+            // Open a Uri and decode a BMP image
+            Uri myUri = new Uri(projectPath+@"\tstImageDB\1.tif");
+            TiffBitmapDecoder decoder2 = new TiffBitmapDecoder(myUri, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
+            BitmapSource bitmapSource2 = decoder2.Frames[0];
+
             BitmapImage myBitmapImage = new BitmapImage();
-          
             myBitmapImage.BeginInit();
-            myBitmapImage.UriSource = new Uri(@"C:\Users\Viva_\Source\Repos\VideoProcessingXRay\tstImageDB\Gray16PNG.PNG");
+            myBitmapImage.UriSource = new Uri(projectPath + @"\tstImageDB\1.tif");
             myBitmapImage.EndInit();
+
+
+
+
+          
+
 
             var pF = myBitmapImage.Format;
 
-
-
             FormatConvertedBitmap newFormatedBitmapSource = new FormatConvertedBitmap();
+
             newFormatedBitmapSource.BeginInit();
 
             newFormatedBitmapSource.Source = myBitmapImage;
-
-
-            newFormatedBitmapSource.DestinationFormat =  System.Windows.Media.PixelFormats.Gray16;
-
-     
-
+            newFormatedBitmapSource.DestinationFormat = createPixelFormat();
             newFormatedBitmapSource.EndInit();
 
-        
+            Stream imageStreamSource = new FileStream(projectPath + @"\tstImageDB\1.tif", FileMode.Open, FileAccess.Read, FileShare.Read);
+            var decoder = new TiffBitmapDecoder(imageStreamSource, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
+            BitmapSource bitmapSource = decoder.Frames[0];
 
-            FileStream stream = new FileStream(@"C:\Users\Viva_\Source\Repos\VideoProcessingXRay\tstImageDB\Gray16PNG.PNG", FileMode.Create, FileAccess.ReadWrite);
 
-            //TiffBitmapEncoder encoder = new TiffBitmapEncoder();
+            int stride = (int)bitmapSource.PixelWidth * (bitmapSource.Format.BitsPerPixel);
+            ushort[] pixels = new ushort[(int)bitmapSource.PixelHeight * stride];
+
+            newFormatedBitmapSource.CopyPixels(pixels, stride, 0);
+
+            Array.Sort(pixels);
+
+            var  a = pixels[pixels.Length - 1];
+
+
+            FileStream stream = new FileStream(@"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\tstImageDB\Gray16tif.tif", FileMode.Create, FileAccess.ReadWrite);
+
+            //using (var stream = File.OpenRead(path))
+            //    return new TiffBitmapDecoder(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad).Frames[0];
+
+            //TiffBitmapEncoder encoder = new TiffBitmapDecoder(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad).Frames[0];
             //encoder.Compression = TiffCompressOption.Zip;
+            //encoder.
             //encoder.Frames.Add(BitmapFrame.Create(newFormatedBitmapSource));
             //encoder.Save(stream);
 
 
-            PngBitmapEncoder encoder = new PngBitmapEncoder();              
-            encoder.Interlace = PngInterlaceOption.On;
-            encoder.Frames.Add(BitmapFrame.Create(newFormatedBitmapSource));
-            encoder.Save(stream);
+            //PngBitmapEncoder encoder = new PngBitmapEncoder();              
+            //encoder.Interlace = PngInterlaceOption.On;
+            //encoder.Frames.Add(BitmapFrame.Create(newFormatedBitmapSource));
+            //encoder.Save(stream);
 
 
 
@@ -401,6 +428,40 @@ namespace VideoProcessingXRay.ViewModels
             }
             return destImage;
         }
+
+
+        public System.Windows.Media.PixelFormat createPixelFormat()
+        {
+            // Create a PixelFormat object.
+            System.Windows.Media.PixelFormat myPixelFormat = new System.Windows.Media.PixelFormat();
+
+            // Make this PixelFormat a Gray32Float pixel format.
+            myPixelFormat = PixelFormats.Gray16;
+
+            // Get the number of bits-per-pixel for this format. Because
+            // the format is "Gray32Float", the float value returned will be 32.
+            int bpp = myPixelFormat.BitsPerPixel;
+
+            // Get the collection of masks associated with this format.
+            IList<PixelFormatChannelMask> myChannelMaskCollection = myPixelFormat.Masks;
+
+            // Capture the mask info in a string.
+            String stringOfValues = " ";
+            foreach (PixelFormatChannelMask myMask in myChannelMaskCollection)
+            {
+                IList<byte> myBytesCollection = myMask.Mask;
+                foreach (byte myByte in myBytesCollection)
+                {
+                    stringOfValues = stringOfValues + myByte.ToString();
+                }
+            }
+
+            // Return the PixelFormat which, for example, could be 
+            // used to set the pixel format of a bitmap by using it to set
+            // the DestinationFormat of a FormatConvertedBitmap.
+            return myPixelFormat;
+        }
+
 
 
         /// <summary>
