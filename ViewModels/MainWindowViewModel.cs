@@ -17,6 +17,7 @@ using VideoProcessingXRay.Models;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Drawing;
+using System.Linq;
 
 namespace VideoProcessingXRay.ViewModels
 {
@@ -133,7 +134,7 @@ namespace VideoProcessingXRay.ViewModels
 
 
 
-          
+            BitmapPalette myPalette = new BitmapPalette(myBitmapImage, 256);
 
 
             var pF = myBitmapImage.Format;
@@ -151,25 +152,41 @@ namespace VideoProcessingXRay.ViewModels
             BitmapSource bitmapSource = decoder.Frames[0];
 
 
-            int stride = (int)bitmapSource.PixelWidth * (bitmapSource.Format.BitsPerPixel);
-            ushort[] pixels = new ushort[(int)bitmapSource.PixelHeight * stride];
+            int stride = (int)bitmapSource.PixelWidth * (bitmapSource.Format.BitsPerPixel/8);
+            byte[] pixels = new byte[(int)bitmapSource.PixelHeight * stride];
 
             newFormatedBitmapSource.CopyPixels(pixels, stride, 0);
 
             Array.Sort(pixels);
 
-            var  a = pixels[pixels.Length - 1];
+            int Min = 0;
+            int Max = 65000;
+            Random randNum = new Random();
+            int[] testArr = Enumerable
+                .Repeat(0, 4792608)
+                .Select(i => randNum.Next(Min, Max))
+                .ToArray();
+
+            byte[] result = new byte[testArr.Length * sizeof(int)];
+            Buffer.BlockCopy(testArr, 0, result, 0, result.Length);
+
+            BitmapSource btmsrs = BitmapSource.Create(1548, 1548, 96, 96, PixelFormats.Gray16, myPalette, result, stride);
 
 
-            FileStream stream = new FileStream(@"C:\Users\FedorovEA\source\repos\VideoProcessingXRay\tstImageDB\Gray16tif.tif", FileMode.Create, FileAccess.ReadWrite);
+            var stream = new FileStream(projectPath + @"\tstImageDB\saved2.tif", FileMode.Create);
+            var encoder = new TiffBitmapEncoder();
+            encoder.Compression = TiffCompressOption.Zip;
+            encoder.Frames.Add(BitmapFrame.Create(btmsrs));
+            encoder.Save(stream);
 
-            //using (var stream = File.OpenRead(path))
-            //    return new TiffBitmapDecoder(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad).Frames[0];
 
-            //TiffBitmapEncoder encoder = new TiffBitmapDecoder(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad).Frames[0];
+            //var bitmap = (BitmapSource)new ImageSourceConverter().ConvertFrom(pixels);
+
+            //BitmapImage image = ToImage(pixels);
+            //FileStream stream = new FileStream(projectPath + @"\tstImageDB\saved.tif", FileMode.Create, FileAccess.ReadWrite);
+            //encoder = new TiffBitmapEncoder();
             //encoder.Compression = TiffCompressOption.Zip;
-            //encoder.
-            //encoder.Frames.Add(BitmapFrame.Create(newFormatedBitmapSource));
+            //encoder.Frames.Add(BitmapFrame.Create(image));
             //encoder.Save(stream);
 
 
@@ -211,6 +228,45 @@ namespace VideoProcessingXRay.ViewModels
             TimerCallback dttm = new TimerCallback(TimerClickDateTime);
             DateTimeTimer = new Timer(dttm, objdt, 0, 1000);
         }
+
+        public BitmapImage convertByteToBitmapImage(Byte[] bytes)
+        {
+            return null;
+        }
+
+        //public static void SaveJpg(string fileName, int sizeX, int sizeY, ushort[] imData)
+        //{
+        //    var bitmap = new Bitmap(sizeX, sizeY, System.Windows.Media.PixelFormat.);
+        //    int count = 0;
+        //    for (int y = 0; y < sizeY; y++)
+        //    {
+        //        for (int x = 0; x < sizeX; x++)
+        //        {
+        //            bitmap.SetPixel(x, y, Color.FromArgb(imData[count], imData[count], imData[count]));
+        //            count++;
+        //        }
+        //    }
+        //    bitmap.Save(fileName, ImageFormat.Jpeg);
+
+        //}
+
+
+        public BitmapImage ToImage(byte[] array)
+        {
+            using (var ms = new System.IO.MemoryStream(array))
+            {
+                var image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad; // here
+                image.StreamSource = ms;
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.DecodePixelHeight = 1548;
+                image.DecodePixelWidth = 1548;
+                image.EndInit();
+                return image;
+            }
+        }
+
 
         private bool CanStartShowFramesCommandExecute(object p) => true;
         public ICommand StopShowFrames { get; }
